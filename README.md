@@ -3,13 +3,14 @@
 For this challenge, we will build a todo app (which is a common way to practice a new technology), using the full stack! From the database to the server, the API client, React and React Query, this app will ask you to use everything you've learned.
 
 ## MVP
+
 - Complete steps 0 - 5
 
 ## Setup
 
 ### 0. Cloning and installation
 
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
+- [x] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
   <details style="padding-left: 2em">
     <summary>Tip</summary>
 
@@ -24,7 +25,7 @@ For this challenge, we will build a todo app (which is a common way to practice 
 
   </details>
 
-- [ ] See the designs [here](http://localhost:5173/designs/index.html)
+- [x] See the designs [here](http://localhost:5173/designs/index.html)
 
 <details>
   <summary>More about using <code>npm</code> vs <code>npx</code></summary>
@@ -61,10 +62,10 @@ Here's a list of steps in case they are useful. You can build in any order you l
 
 - [ ] Build API client in the front end
 
-### 5. Querying Data 
+### 5. Querying Data
 
 - [ ] Write a query with the `useQuery` hook to fetch the task data from the API
-- [ ] Mutate data with the `useMutation` hook to create, update, and delete task data via the API 
+- [ ] Mutate data with the `useMutation` hook to create, update, and delete task data via the API
 
 ---
 
@@ -82,7 +83,7 @@ Here's a list of steps in case they are useful. You can build in any order you l
 ## Submitting this Challenge for Marking
 
 This challenge can be used for the following trello assessments:
- 
+
 - **WD03 - Forms**
 - **WD04 - Fullstack** (**Note** - you will need to deploy this challenge to dokku to pass this trello assessment.)
 
