@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
   const newTask = req.body
   try {
     await db.addTask(newTask)
+    res.sendStatus(200)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })

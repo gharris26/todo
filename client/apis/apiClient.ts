@@ -14,5 +14,9 @@ export async function fetchTaskById(id: number): Promise<Task> {
 }
 
 export async function addTask(newTask: Task) {
-  await request.post(rootURL).send(newTask)
+  return await request.post(rootURL).send(newTask)
+}
+
+export async function deleteTaskById(id: number) {
+  await request.del(`${rootURL}/${id}`)
 }

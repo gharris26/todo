@@ -1,18 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-import { Task } from '../../models/task'
+import { useQuery } from '@tanstack/react-query'
+import { fetchTasks } from '../apis/apiClient'
 
 function ToDoList() {
-  const tasks = [
-    { id: 1, task: 'folding the laundry', priority: 'low', completed: true },
-    { id: 2, task: 'vacuuming the carpet', priority: 'low', completed: false },
-    { id: 3, task: 'buying groceries', priority: 'high', completed: false },
-  ] as Task[]
+  const {
+    data: tasks,
+    isPending,
+    isError,
+  } = useQuery({ queryKey: ['tasks'], queryFn: () => fetchTasks() })
+
+  if (isPending) {
+    return <p>Loading...</p>
+  }
+
+  if (isError) {
+    return <p>Error...</p>
+  }
 
   return (
     <>
       <div className="taskListContainer">
-        {tasks.map((task) => (
-          <div key={task.id} className="task-list">
+        {tasks.map((task, i) => (
+          <div key={i} className="task-list">
             <p className="taskName">{task.task}</p>
             <input className="toggle" type="checkbox" />
           </div>
