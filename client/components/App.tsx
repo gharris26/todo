@@ -5,11 +5,12 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>todos</h1>
-        <AddTodo />
+        <h1>Georgia&apos;s List</h1>
       </header>
-      <section className="main"></section>
-      <ToDoList />
+      <section className="main">
+        <AddTodo />
+        <ToDoList />
+      </section>
       <footer className="footer"></footer>
     </>
   )

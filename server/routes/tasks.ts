@@ -13,20 +13,21 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/add', async (req, res) => {
-  const task = req.body
+router.get('/:id', async (req, res) => {
+  const id = Number(req.params.id)
   try {
-    await db.addTask(task)
+    const task = await db.getAllTasksById(id)
+    res.json(task)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })
   }
 })
 
-router.get('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
+  const newTask = req.body
   try {
-    const task = await db.getAllTasksById(Number(req.params.id))
-    res.json(task)
+    await db.addTask(newTask)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })

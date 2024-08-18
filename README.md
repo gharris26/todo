@@ -60,7 +60,7 @@ Here's a list of steps in case they are useful. You can build in any order you l
 
 ### 4. Building the API client
 
-- [ ] Build API client in the front end
+- [x] Build API client in the front end
 
 ### 5. Querying Data
 
