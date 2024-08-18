@@ -1,13 +1,28 @@
 // eslint-disable-next-line no-unused-vars
-import { useQuery } from '@tanstack/react-query'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { fetchTasks } from '../apis/apiClient'
+import { deleteTaskById } from '../apis/apiClient'
+import { useState } from 'react'
 
 function ToDoList() {
+  const [isChecked, setIsChecked] = useState(false)
+
   const {
     data: tasks,
     isPending,
     isError,
   } = useQuery({ queryKey: ['tasks'], queryFn: () => fetchTasks() })
+  const queryClient = useQueryClient()
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: number | undefined) => deleteTaskById(id),
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: ['tasks'] }),
+  })
+
+  const handleCheckboxChange = (id: number | undefined) => {
+    if (!id) return
+    deleteMutation.mutate(id)
+  }
 
   if (isPending) {
     return <p>Loading...</p>
@@ -28,11 +43,8 @@ function ToDoList() {
             <div className="input-group">
               <input
                 type="checkbox"
-                className="form-control"
-                name="blogcomments"
-                id="blogcomments"
-                required
-                value="1"
+                checked={isChecked}
+                onChange={() => handleCheckboxChange(task.id)}
               />
             </div>
           </div>

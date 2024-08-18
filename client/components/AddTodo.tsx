@@ -34,6 +34,12 @@ function AddTodo() {
 
   return (
     <>
+      <div>
+        <p className="disclaimer">
+          Submit your tasks to add them to the list and click the check box to
+          remove them!
+        </p>
+      </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="task">Task: </label>
         <input onChange={handleChange} value={newTask} id="task"></input>

@@ -17,6 +17,6 @@ export async function addTask(newTask: Task) {
   return await request.post(rootURL).send(newTask)
 }
 
-export async function deleteTaskById(id: number) {
+export async function deleteTaskById(id: number | undefined) {
   await request.del(`${rootURL}/${id}`)
 }
