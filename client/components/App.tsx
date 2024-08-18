@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>Georgia&apos;s List</h1>
+        <h1 className="title">What does Georgia need to do today?</h1>
       </header>
       <section className="main">
         <AddTodo />

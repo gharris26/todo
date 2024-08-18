@@ -65,7 +65,7 @@ Here's a list of steps in case they are useful. You can build in any order you l
 ### 5. Querying Data
 
 - [x] Write a query with the `useQuery` hook to fetch the task data from the API
-- [ ] Mutate data with the `useMutation` hook to create, update, and delete task data via the API
+- [x] Mutate data with the `useMutation` hook to create, update, and delete task data via the API
 
 ---
 

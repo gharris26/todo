@@ -35,14 +35,15 @@ function AddTodo() {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="task">Task</label>
+        <label htmlFor="task">Task: </label>
         <input onChange={handleChange} value={newTask} id="task"></input>
-        <label htmlFor="priority">Priority</label>
+        <label htmlFor="priority">Priority: </label>
         <input
           onChange={handlePriorityChange}
           value={newPriority}
           id="priority"
         ></input>
+        <br></br>
         <button>Submit</button>
       </form>
     </>

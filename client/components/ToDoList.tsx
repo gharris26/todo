@@ -22,8 +22,19 @@ function ToDoList() {
       <div className="taskListContainer">
         {tasks.map((task, i) => (
           <div key={i} className="task-list">
-            <p className="taskName">{task.task}</p>
-            <input className="toggle" type="checkbox" />
+            <p className="taskName">
+              I need to be...{task.task}, priority: {task.priority}
+            </p>
+            <div className="input-group">
+              <input
+                type="checkbox"
+                className="form-control"
+                name="blogcomments"
+                id="blogcomments"
+                required
+                value="1"
+              />
+            </div>
           </div>
         ))}
       </div>
