@@ -55,8 +55,8 @@ Here's a list of steps in case they are useful. You can build in any order you l
 
 ### 3. Setting the stage
 
-- [ ] Build a React component with static html
-- [ ] Follow the [design](./public/designs/index.html) template for classNames and html element layout
+- [x] Build a React component with static html
+- [x] Follow the [design](./public/designs/index.html) template for classNames and html element layout
 
 ### 4. Building the API client
 

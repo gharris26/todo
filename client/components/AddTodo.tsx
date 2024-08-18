@@ -2,11 +2,7 @@
 function AddTodo() {
   return (
     <>
-      <input
-        className="new-todo"
-        placeholder="What needs to be done?"
-        autoFocus={true}
-      />
+      <input className="new-todo" placeholder="What needs to be done?" />
     </>
   )
 }

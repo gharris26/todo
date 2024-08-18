@@ -34,25 +34,21 @@ router.get('/:id', async (req, res) => {
 })
 
 router.patch('/:id', async (req, res) => {
+  const id = Number(req.params.id)
   try {
-    const id = Number(req.params.id)
     await db.updateTask(id, req.body)
-    res.sendStatus(204)
+    res.sendStatus(200)
   } catch (error) {
     console.log('Failed to update task', error)
     res.sendStatus(500)
   }
 })
 
-router.delete('/del/:id', async (req, res) => {
-  const { id } = req.params
+router.delete('/:id', async (req, res) => {
+  const id = Number(req.params.id)
   try {
-    const deletedTask = await db.deleteTask(Number(id))
-    if (deletedTask) {
-      res
-        .status(200)
-        .json({ message: `Task with ID ${id} was deleted successfully` })
-    }
+    await db.deleteTask(id)
+    res.sendStatus(200)
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Something went wrong' })

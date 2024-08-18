@@ -19,16 +19,9 @@ export async function getAllTasksById(id: number) {
 }
 
 export async function updateTask(id: number, data: Task) {
-  await db('tasks').where({ id }).update(data)
-  const updatedTask = await getAllTasksById(id)
-  return updatedTask
+  return db('tasks').where({ id }).update(data)
 }
 
 export async function deleteTask(id: number): Promise<Task | null> {
-  const deletedTask = await getAllTasksById(id)
-  if (deletedTask) {
-    await db('tasks').where({ id }).del()
-    return deletedTask
-  }
-  return null
+  return db('tasks').where({ id }).del()
 }
