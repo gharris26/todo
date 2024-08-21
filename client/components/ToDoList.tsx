@@ -5,7 +5,7 @@ import { deleteTaskById } from '../apis/apiClient'
 import { useState } from 'react'
 
 function ToDoList() {
-  const [isChecked, setIsChecked] = useState(false)
+  const [isChecked] = useState(false)
 
   const {
     data: tasks,
@@ -37,9 +37,9 @@ function ToDoList() {
       <div className="taskListContainer">
         {tasks.map((task, i) => (
           <div key={i} className="task-list">
-            <p className="taskName">
+            <h4 className="taskName">
               I need to be...{task.task}, priority: {task.priority}
-            </p>
+            </h4>
             <div className="input-group">
               <input
                 type="checkbox"

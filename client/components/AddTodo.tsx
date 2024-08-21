@@ -35,10 +35,10 @@ function AddTodo() {
   return (
     <>
       <div>
-        <p className="disclaimer">
+        <h3 className="disclaimer">
           Submit your tasks to add them to the list and click the check box to
           remove them!
-        </p>
+        </h3>
       </div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="task">Task: </label>
