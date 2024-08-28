@@ -37,15 +37,18 @@ function ToDoList() {
       <div className="taskListContainer">
         {tasks.map((task, i) => (
           <div key={i} className="task-list">
-            <h4 className="taskName">
+            <h3 className="taskName">
               I need to be...{task.task}, priority: {task.priority}
-            </h4>
+            </h3>
             <div className="input-group">
-              <input
-                type="checkbox"
-                checked={isChecked}
-                onChange={() => handleCheckboxChange(task.id)}
-              />
+              <label>
+                <input
+                  type="checkbox"
+                  checked={isChecked}
+                  onChange={() => handleCheckboxChange(task.id)}
+                />
+                Click to Complete
+              </label>
             </div>
           </div>
         ))}
